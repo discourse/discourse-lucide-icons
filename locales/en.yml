@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: "TODO"
+    description: "Lucide icons for Discourse"
     settings:
       stroke_width: "Controls the thickness of the lines within icons."
