@@ -1,6 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 
-export default apiInitializer(api => {
+export default apiInitializer((api) => {
   api.replaceIcon("align-left", "lc-align-left");
   api.replaceIcon("anchor", "lc-anchor");
   api.replaceIcon("angle-down", "lc-chevron-down");
@@ -200,7 +200,10 @@ export default apiInitializer(api => {
   api.replaceIcon("notification.moved_post", "lc-move");
   api.replaceIcon("notification.assigned", "lc-user-check");
   api.replaceIcon("notification.chat_quoted", "lc-message-square");
-  api.replaceIcon("notification.discourse_assign.assign_group_notification", "lc-users");
+  api.replaceIcon(
+    "notification.discourse_assign.assign_group_notification",
+    "lc-users"
+  );
   api.replaceIcon("paper-plane", "lc-send");
   api.replaceIcon("paintbrush", "lc-paintbrush");
   api.replaceIcon("palette", "lc-palette");
@@ -262,4 +265,3 @@ export default apiInitializer(api => {
   api.replaceIcon("wrench", "lc-wrench");
   api.replaceIcon("xmark", "lc-x");
 });
-
