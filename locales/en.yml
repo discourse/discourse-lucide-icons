@@ -2,4 +2,4 @@ en:
   theme_metadata:
     description: "TODO"
     settings:
-      example_setting: "A description of a setting."
+      stroke_width: "Controls the thickness of the lines within icons."
