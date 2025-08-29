@@ -1,6 +1,19 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer((api) => {
+  const strokeWidthMap = {
+    "extra-thin": "1",
+    thin: "1.5",
+    medium: "2",
+    thick: "2.5",
+    "extra-thick": "3",
+  };
+
+  document.documentElement.style.setProperty(
+    "--lucide-icons-stroke-width",
+    strokeWidthMap[settings.stroke_width] || "2"
+  );
+
   api.replaceIcon("align-left", "lc-align-left");
   api.replaceIcon("anchor", "lc-anchor");
   api.replaceIcon("angle-down", "lc-chevron-down");

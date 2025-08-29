@@ -1,2 +1,10 @@
-example_setting:
-  default: true
+stroke_width:
+  default: medium
+  type: enum
+  refresh: true
+  choices:
+    - extra-thin
+    - thin
+    - medium
+    - thick
+    - extra-thick
