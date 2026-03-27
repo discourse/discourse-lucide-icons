@@ -33,7 +33,7 @@ export default apiInitializer((api) => {
     "chart-line": "lc-chart-line",
     "chart-pie": "lc-chart-pie",
     "check": "lc-check",
-    "circle": "lc-circle",
+    // "circle": "lc-circle", We use the circle icon for a solid dot on unread indicators, so we don't want to replace it with an outlined circular icon
     "circle-check": "lc-circle-check",
     "circle-chevron-down": "lc-circle-chevron-down",
     "circle-minus": "lc-circle-minus",
@@ -102,6 +102,7 @@ export default apiInitializer((api) => {
     "trophy": "lc-trophy",
     "upload": "lc-upload",
     "user": "lc-user",
+    "users": "lc-users",
     "user-check": "lc-user-check",
     "user-pen": "lc-user-pen",
     "user-plus": "lc-user-plus",
@@ -306,13 +307,14 @@ export default apiInitializer((api) => {
     "d-muted": "lc-bell-off",
     "d-post-share": "lc-link",
     "d-regular": "lc-bell",
-    "d-tracking": "lc-bell",
+    "d-tracking": "lc-bell-plus",
     "d-unliked": "lc-heart",
-    "d-watching": "lc-bell",
-    "d-watching-first": "lc-bell",
+    "d-watching": "lc-bell-ring",
+    "d-watching-first": "lc-bell-dot",
     "discourse-compress": "lc-minimize",
     "discourse-expand": "lc-maximize",
     "discourse-other-tab": "lc-grid-2x2",
+    "discourse-sparkles": "lc-sparkles",
 
     // Notification icons
     "notification.assigned": "lc-user-check",
@@ -343,14 +345,13 @@ export default apiInitializer((api) => {
     "notification.replied": "lc-reply",
     "notification.topic_reminder": "lc-clock",
     "notification.votes_released": "lc-plus",
-    "notification.watching_first_post": "lc-bell",
+    "notification.watching_first_post": "lc-bell-dot",
 
-    // User menu icons
+    // Other named icons
+    "sidebar.all_categories": "lc-list", // We don't have sidebar.all_tags
+    "topic.closed": "lc-lock",
     "user_menu.drafts": "lc-pencil",
     "user_menu.replies": "lc-reply",
-
-    // Topic state icons
-    "topic.closed": "lc-lock",
   };
 
   Object.entries(iconMappings).forEach(([faIcon, lucideIcon]) => {
