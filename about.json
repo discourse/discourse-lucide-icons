@@ -1,8 +1,8 @@
 {
   "name": "Discourse Lucide Icons",
   "description": "Replaces Discourse icons with the Lucide icon set",
-  "about_url": null,
-  "license_url": null,
+  "about_url": "https://meta.discourse.org/t/discourse-lucide-icons/400133",
+  "license_url": "https://github.com/discourse/discourse-lucide-icons/blob/main/LICENSE",
   "component": true,
   "assets": {
     "icons-sprite": "/assets/icons-sprite.svg"
