@@ -357,7 +357,17 @@ export default apiInitializer((api) => {
     // "d-liked": "lc-heart", We want a filled heart for liked, so we only map d-unliked to lc-heart.
   };
 
+  const ignored = new Set(
+    (settings.ignored_mappings || "")
+      .split("|")
+      .map((name) => name.trim())
+      .filter(Boolean)
+  );
+
   Object.entries(iconMappings).forEach(([faIcon, lucideIcon]) => {
+    if (ignored.has(faIcon)) {
+      return;
+    }
     api.replaceIcon(faIcon, lucideIcon);
   });
 });

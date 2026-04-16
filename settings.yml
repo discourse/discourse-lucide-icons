@@ -8,3 +8,8 @@ stroke_width:
     - medium
     - thick
     - extra-thick
+ignored_mappings:
+  default: ""
+  type: list
+  list_type: compact
+  refresh: true
