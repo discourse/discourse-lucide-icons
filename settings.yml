@@ -8,8 +8,8 @@ stroke_width:
     - medium
     - thick
     - extra-thick
-ignored_mappings:
-  default: ""
+ignored_icons:
+  default: "d-liked|square-full|circle"
   type: list
   list_type: compact
   refresh: true
