@@ -3,3 +3,4 @@ en:
     description: "Lucide icons for Discourse"
     settings:
       stroke_width: "Controls the thickness of the lines within icons."
+      ignored_icons: "Don't replace these icons with Lucide icons. Use the default FontAwesome icon instead."

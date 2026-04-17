@@ -28,11 +28,13 @@ export default apiInitializer((api) => {
     "book": "lc-book",
     "bookmark": "lc-bookmark",
     "briefcase": "lc-briefcase",
+    "calendar": "lc-calendar",
     "chart-bar": "lc-chart-bar",
     "chart-column": "lc-chart-column",
     "chart-line": "lc-chart-line",
     "chart-pie": "lc-chart-pie",
     "check": "lc-check",
+    "circle": "lc-circle",
     "circle-check": "lc-circle-check",
     "circle-chevron-down": "lc-circle-chevron-down",
     "circle-minus": "lc-circle-minus",
@@ -52,6 +54,7 @@ export default apiInitializer((api) => {
     "flag": "lc-flag",
     "folder": "lc-folder",
     "folder-open": "lc-folder-open",
+    "fire": "lc-flame",
     "gift": "lc-gift",
     "globe": "lc-globe",
     "graduation-cap": "lc-graduation-cap",
@@ -229,6 +232,7 @@ export default apiInitializer((api) => {
     "sliders": "lc-sliders-horizontal",
     "sort": "lc-arrow-up-down",
     "spinner": "lc-loader",
+    "square-full": "lc-square",
     "table-cells": "lc-grid-3x3",
     "table-columns": "lc-columns-2",
     "temperature-three-quarters": "lc-thermometer",
@@ -252,15 +256,6 @@ export default apiInitializer((api) => {
     "wand-magic": "lc-wand-sparkles",
     "wand-magic-sparkles": "lc-wand-sparkles",
     "xmark": "lc-x",
-
-    // Brand icons
-    "fab-apple": "lc-apple",
-    "fab-chrome": "lc-chromium",
-    "fab-facebook": "lc-facebook",
-    "fab-github": "lc-github",
-    "fab-instagram": "lc-instagram",
-    "fab-linkedin-in": "lc-linkedin",
-    "fab-twitter": "lc-twitter",
 
     // FontAwesome Regular variants (far-)
     "far-bell": "lc-bell",
@@ -301,7 +296,7 @@ export default apiInitializer((api) => {
     "d-chat": "lc-message-square-text",
     "d-drop-collapsed": "lc-chevron-right",
     "d-drop-expanded": "lc-chevron-down",
-
+    "d-liked": "lc-heart",
     "d-muted": "lc-bell-off",
     "d-post-share": "lc-link",
     "d-regular": "lc-bell",
@@ -350,14 +345,19 @@ export default apiInitializer((api) => {
     "topic.closed": "lc-lock",
     "user_menu.drafts": "lc-pencil",
     "user_menu.replies": "lc-reply",
-
-    //Icons we don't map
-    // "circle": "lc-circle", We use the circle icon for a solid dot, so we don't want to replace it with an outlined icon. We map far-circle to lc-circle instead.
-    // "square-full": "lc-square",  We use the square-full icon for a solid square, so we don't want to replace it with an outlined icon. We map far-square to lc-square instead.
-    // "d-liked": "lc-heart", We want a filled heart for liked, so we only map d-unliked to lc-heart.
   };
 
+  const ignored = new Set(
+    (settings.ignored_icons || "")
+      .split("|")
+      .map((name) => name.trim())
+      .filter(Boolean)
+  );
+
   Object.entries(iconMappings).forEach(([faIcon, lucideIcon]) => {
+    if (ignored.has(faIcon)) {
+      return;
+    }
     api.replaceIcon(faIcon, lucideIcon);
   });
 });
